@@ -1,0 +1,17 @@
+configuration-as-code
+configuration-as-code-support
+git
+matrix-auth
+pipeline-model-definition
+envinject
+greenballs
+jslint
+junit
+maven-plugin
+pipeline-maven
+checkstyle
+warnings-ng
+test-results-analyzer
+slack
+fitnesse:1.28
+ansicolor

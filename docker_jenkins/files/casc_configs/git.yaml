@@ -1,0 +1,11 @@
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/bin/git
+
+unclassified:
+  gitscm:
+    globalConfigName: jenkins
+    globalConfigEmail: jenkins@collabralink.com
+    createAccountBasedOnEmail: true

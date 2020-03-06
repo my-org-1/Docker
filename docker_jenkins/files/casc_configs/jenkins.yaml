@@ -1,0 +1,3 @@
+jenkins:
+  mode: NORMAL
+  crumbIssuer: standard
