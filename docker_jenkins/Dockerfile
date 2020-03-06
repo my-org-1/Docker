@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.215
+FROM jenkins/jenkins:2.223
 
 USER root
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" &&\
