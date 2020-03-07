@@ -6,6 +6,8 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
     ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 RUN apt-get update -y && apt-get install -y cron zip vim gosu python-pip jq && apt-get clean
+RUN pip install detect-secrets
+
 
 # Configure Timezone
 RUN \
@@ -28,6 +30,7 @@ ENV CASC_JENKINS_CONFIG /var/wont_persist/casc_configs
 COPY files/jenkins_wrapper.sh /var/wont_persist/jenkins_wrapper.sh
 USER root
 RUN chown -R 1000:1000 /var/wont_persist
+RUN chmod 666 /var/run/docker.sock #just added this
 
 
 ENV JAVA_OPTIONS -Djava.awt.headless=true -Djavax.net.ssl.trustStore=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.232.b09-0.el7_7.x86_64/jre/lib/security/cacerts -Djavax.net.ssl.trustStorePassword=changeit
