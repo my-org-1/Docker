@@ -7,6 +7,7 @@ aws configure set region `curl -s http://169.254.169.254/latest/meta-data/placem
 aws s3 sync s3://$JENKINS_STATE_BUCKET/jenkins_home /var/jenkins_home
 chown -R jenkins:jenkins /var/jenkins_home
 eval $(aws ecr get-login --region us-east-1 | sed 's/ -e none//')
+chmod 666 /var/run/docker.sock
 
 #sed -i -e "s|OAUTH_CLIENT_ID|$OAUTH_CLIENT_ID|" -e "s|OAUTH_CLIENT_SECRET|$OAUTH_CLIENT_SECRET|" /var/wont_persist/casc_configs/github-oauth.yaml
 
