@@ -18,7 +18,7 @@ dpkg-reconfigure --frontend noninteractive tzdata
 
 RUN curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
   && chmod +x /usr/local/bin/docker-compose
-
+RUN chmod 666 /var/run/docker.sock #just added this
 
 USER jenkins
 ENV JENKINS_HOME /var/jenkins_home/
@@ -29,7 +29,6 @@ COPY files/casc_configs /var/wont_persist/casc_configs
 ENV CASC_JENKINS_CONFIG /var/wont_persist/casc_configs
 COPY files/jenkins_wrapper.sh /var/wont_persist/jenkins_wrapper.sh
 USER root
-RUN chmod 666 /var/run/docker.sock #just added this
 RUN chown -R 1000:1000 /var/wont_persist
 
 
