@@ -3,16 +3,13 @@ pipeline {
     stages {
         stage('build-image') {
             steps {
-               
-                         ansiColor('xterm') {
- 
-                    
+                withAWS(credentials: 'AWS_CREDENTIALS', region: 'us-east-1') {
+                         
                         sh 'cd docker_jenkins && ./deploy-image.sh'
-                         }
-             
+                       
+                }
             }
         }
     }
 }
-
 
