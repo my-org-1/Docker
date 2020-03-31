@@ -7,7 +7,8 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 
 RUN apt-get update -y && apt-get install -y cron zip vim gosu python-pip jq && apt-get clean
 RUN pip install detect-secrets
-RUN cmd.cat/envsubst envsubst
+
+docker run cmd.cat/envsubst envsubst
 
 
 # Configure Timezone
