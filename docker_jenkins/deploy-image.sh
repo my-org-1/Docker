@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#730373213083.dkr.ecr.us-east-1.amazonaws.com/jenkins
 #repository_url=730373213083.dkr.ecr.us-east-1.amazonaws.com/jenkins-test
-repository_url=735575797588.dkr.ecr.us-east-1.amazonaws.com/jenkins
 
-image_name=jenkins
+repository_url=730373213083.dkr.ecr.us-east-1.amazonaws.com/jenkins
+
+image_name=jenkinsv2.223
 
 eval $(aws ecr get-login --region us-east-1 --no-include-email)
 
@@ -16,3 +16,4 @@ if [[ "$(docker images -q x${repository_url} 2> /dev/null)" == "" ]]; then
   docker tag ${image_name}:latest ${repository_url}:latest
   docker push ${repository_url}:latest
 fi
+
