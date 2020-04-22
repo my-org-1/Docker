@@ -9,7 +9,6 @@ RUN apt-get update -y && apt-get install -y cron zip vim gosu python-pip jq && a
 RUN pip install detect-secrets
 RUN apt-get install gettext-base
 
-
 # Configure Timezone
 RUN \
 rm -f /etc/localtime && \
