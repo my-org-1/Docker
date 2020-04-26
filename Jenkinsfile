@@ -4,7 +4,7 @@ pipeline {
     stage('Slave') {
         agent {
             ecs {
-                inheritFrom 'fargate-jnlp-slave'
+               // inheritFrom 'fargate-jnlp-slave'
                // cpu 1024
               //  memory 2046
               //  image '$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/jenkins/java8:2019.7.29-1'
