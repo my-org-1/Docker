@@ -5,8 +5,8 @@ pipeline {
         agent {
             ecs {
                 inheritFrom 'fargate-jnlp-slave'
-                cpu 1024
-                memory 2046
+               // cpu 1024
+              //  memory 2046
               //  image '$AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com/jenkins/java8:2019.7.29-1'
               //  logDriver 'fluentd'
               //  logDriverOptions([[name: 'foo', value:'bar'], [name: 'bar', value: 'foo']])
